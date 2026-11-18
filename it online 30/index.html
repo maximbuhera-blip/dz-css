@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практична робота: класи</title>
+  <style>
+    body { max-width: 900px; margin: 30px auto; padding: 0 16px; font-family: Arial, sans-serif; color: #222; }
+    section { margin: 22px 0; padding: 18px; border: 1px solid #ccc; border-radius: 10px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+    .card { padding: 14px; border: 1px solid #ddd; border-radius: 8px; }
+    .info { white-space: pre-line; line-height: 1.5; }
+    label { display: inline-block; margin: 6px; }
+    input { display: block; box-sizing: border-box; max-width: 100%; padding: 7px; }
+    button { margin: 5px 4px 5px 0; padding: 8px 10px; cursor: pointer; }
+    progress { display: block; width: 100%; margin: 10px 0; }
+    .status { color: #a00; }
+  </style>
+</head>
+<body>
+  <h1>Практична робота: класи</h1>
+  <p>Прогрес книг і змінені дані автоматично зберігаються у браузері.</p>
+
+  <section>
+    <h2>Завдання 1. Книги</h2>
+    <p>Кнопками можна читати наступну сторінку, задану кількість сторінок або почати спочатку.</p>
+    <div id="books" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>Завдання 2. Місто</h2>
+    <form id="city-form">
+      <label>Назва міста<input name="name" value="Львів" required></label>
+      <label>Регіон<input name="region" value="Львівська область" required></label>
+      <label>Країна<input name="country" value="Україна" required></label>
+      <label>Кількість жителів<input name="population" type="number" min="0" value="717273" required></label>
+      <label>Поштовий індекс<input name="postalCode" value="79000" required></label>
+      <label>Телефонний код<input name="phoneCode" value="+380 32" required></label>
+      <button type="submit">Зберегти дані міста</button>
+    </form>
+    <p id="city-output" class="info"></p>
+    <form id="population-form">
+      <label>Змінити кількість жителів на<input name="difference" type="number" value="1000" required></label>
+      <button type="submit">Змінити населення</button>
+    </form>
+    <p id="city-status" class="status"></p>
+  </section>
+
+  <section>
+    <h2>Завдання 3. Країна</h2>
+    <form id="country-form">
+      <label>Назва країни<input name="name" value="Україна" required></label>
+      <label>Континент<input name="continent" value="Європа" required></label>
+      <label>Кількість жителів<input name="population" type="number" min="0" value="36700000" required></label>
+      <label>Телефонний код<input name="phoneCode" value="+380" required></label>
+      <label>Столиця<input name="capital" value="Київ" required></label>
+      <label>Міста через кому<input name="cities" value="Київ, Львів, Одеса"></label>
+      <button type="submit">Зберегти дані країни</button>
+    </form>
+    <p id="country-output" class="info"></p>
+    <form id="country-city-form">
+      <label>Назва міста<input name="cityName" placeholder="Наприклад, Харків" required></label>
+      <button type="submit">Додати місто</button>
+      <button id="remove-city" type="button">Видалити це місто</button>
+    </form>
+    <p id="country-status" class="status"></p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
